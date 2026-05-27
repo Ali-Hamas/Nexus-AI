@@ -1,0 +1,9 @@
+{
+  "confidence_score": 8.8,
+  "confidence_reason": [
+    "New tier explicitly listed in header tags.",
+    "Consistent feature mapping maintained across structural shift."
+  ],
+  "impact_score": 9.0,
+  "impact_reason": "Introduction of mid-market tier represents a major go-to-market shift."
+}

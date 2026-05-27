@@ -1,0 +1,9 @@
+{
+  "confidence_score": 9.5,
+  "confidence_reason": [
+    "No changes detected.",
+    "Hash matched exactly."
+  ],
+  "impact_score": 0.0,
+  "impact_reason": "No movement."
+}

@@ -1,0 +1,18 @@
+{
+  "additions": {
+    "pricing": {
+      "Business": {
+        "price": "$50/mo",
+        "billing": "annually"
+      }
+    },
+    "Enterprise": {
+      "price": "Custom"
+    }
+  },
+  "removals": {
+    "Enterprise": {
+      "price": "Contact Us"
+    }
+  }
+}

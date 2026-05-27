@@ -1,0 +1,21 @@
+{
+  "title": "Executive Brief: Notion",
+  "scenario": "feature_addition",
+  "diff": {
+    "additions": {},
+    "removals": {},
+    "confidence_score": 9.5,
+    "confidence_reason": [
+      "No changes detected.",
+      "Hash matched exactly."
+    ],
+    "impact_score": 0.0,
+    "impact_reason": "No movement."
+  },
+  "governance": {
+    "reviewer": "admin",
+    "action": "APPROVED",
+    "timestamp": "2026-05-27T00:00:00Z",
+    "notes": "Verified against competitor site. Legitimate pricing change."
+  }
+}

@@ -1,0 +1,23 @@
+# Python
+nexus-backend/venv/
+nexus-backend/__pycache__/
+nexus-backend/*.pyc
+nexus-backend/nexus.db
+nexus-backend/nexus.backup.db
+*.log
+
+# Node
+nexus-frontend/node_modules/
+nexus-frontend/.next/
+nexus-frontend/out/
+nexus-frontend/build/
+
+# Env
+.env
+*.env
+
+# OS
+.DS_Store
+
+# Export
+NEXUS_ARCHIVE_ROOT/

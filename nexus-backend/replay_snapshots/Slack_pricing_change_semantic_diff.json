@@ -1,0 +1,16 @@
+{
+  "additions": {
+    "pricing": {
+      "Pro": {
+        "price": "$25/mo"
+      }
+    }
+  },
+  "removals": {
+    "pricing": {
+      "Pro": {
+        "price": "$20/mo"
+      }
+    }
+  }
+}

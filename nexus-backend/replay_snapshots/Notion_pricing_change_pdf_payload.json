@@ -1,0 +1,33 @@
+{
+  "title": "Executive Brief: Notion",
+  "scenario": "pricing_change",
+  "diff": {
+    "additions": {
+      "pricing": {
+        "Pro": {
+          "price": "$25/mo"
+        }
+      }
+    },
+    "removals": {
+      "pricing": {
+        "Pro": {
+          "price": "$20/mo"
+        }
+      }
+    },
+    "confidence_score": 9.2,
+    "confidence_reason": [
+      "Pricing table structure remained intact.",
+      "Direct numeric value change verified against previous snapshot."
+    ],
+    "impact_score": 8.5,
+    "impact_reason": "Price increase indicates potential margin expansion or strategic repositioning."
+  },
+  "governance": {
+    "reviewer": "admin",
+    "action": "APPROVED",
+    "timestamp": "2026-05-27T00:00:00Z",
+    "notes": "Verified against competitor site. Legitimate pricing change."
+  }
+}

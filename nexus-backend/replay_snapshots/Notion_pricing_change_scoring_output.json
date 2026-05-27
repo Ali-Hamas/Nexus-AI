@@ -1,0 +1,9 @@
+{
+  "confidence_score": 9.2,
+  "confidence_reason": [
+    "Pricing table structure remained intact.",
+    "Direct numeric value change verified against previous snapshot."
+  ],
+  "impact_score": 8.5,
+  "impact_reason": "Price increase indicates potential margin expansion or strategic repositioning."
+}
