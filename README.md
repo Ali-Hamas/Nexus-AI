@@ -74,7 +74,7 @@ pip install -r requirements-lock.txt
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-**Frontend (Next.js 14)**
+**Frontend (Next.js 16, React 19, Turbopack)**
 ```bash
 cd nexus-frontend
 npm install
@@ -109,14 +109,15 @@ NEXUS-AI/
 │   │   └── simulation/          # Bounded Scenario Engine
 │   └── tests/                   # Verification and Audit Scripts
 │
-├── nexus-frontend/              # Next.js 14 Dashboard
+├── nexus-frontend/              # Next.js 16 Dashboard (Turbopack, React 19)
 │   ├── app/                     # App Router, Layouts, and UI
-│   ├── components/              # Topology Graphs and Integrity Panels
+│   ├── src/components/          # Topology Graphs, Copilot, Integrity Panels
+│   ├── src/state/               # Zustand stores (navStore, graphStore)
+│   ├── src/lib/                 # nexusFetch wrapper for backend calls
 │   └── public/                  # Static Assets
 │
 ├── launch_nexus.ps1             # Unified Boot Script
-├── launch_nexus_minimal.ps1     # Nuclear Offline Survivability Boot
-└── emergency_recovery.md        # Demo Continuation Doctrine
+└── launch_nexus_minimal.ps1     # Nuclear Offline Survivability Boot
 ```
 
 ---

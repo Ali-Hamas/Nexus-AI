@@ -6,7 +6,7 @@ async def verify_engine():
     
     # 1. Test Mock Extraction (No Key Fallback)
     mock_md = "# Pricing\n\nPro: $20/mo\nEnterprise: Contact Us"
-    extracted = await extract_semantic_intelligence(mock_md)
+    extracted, _ = await extract_semantic_intelligence(mock_md)
     assert "pricing" in extracted, "Failed to extract structured pricing"
     
     # 2. Test Semantic Diff

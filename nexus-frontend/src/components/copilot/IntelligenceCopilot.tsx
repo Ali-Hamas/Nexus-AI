@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavStore } from '@/state/navStore';
-import { Terminal, Send, Cpu, Loader2, Filter } from 'lucide-react';
+import { Terminal, Send, Loader2, Filter } from 'lucide-react';
 import { nexusFetch } from '@/lib/api';
 import { graphStore } from '@/state/graphStore';
 
@@ -15,7 +15,7 @@ interface Message {
 }
 
 export function IntelligenceCopilot() {
-    const { activePersona, activeTenant, sessionMode, temporalTarget } = useNavStore();
+    const { activePersona, activeSector, sessionMode, temporalTarget } = useNavStore();
     const [messages, setMessages] = useState<Message[]>([{
         id: 'init',
         role: 'agent',
@@ -86,7 +86,7 @@ export function IntelligenceCopilot() {
                 persona: activePersona
             };
             setMessages(prev => [...prev, agentMsg]);
-        } catch (error) {
+        } catch {
             setMessages(prev => [...prev, {
                 id: (Date.now() + 1).toString(),
                 role: 'agent',

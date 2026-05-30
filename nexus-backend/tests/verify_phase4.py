@@ -4,7 +4,7 @@ from app.services.fetcher import safe_fetch_pipeline
 async def verify_fetcher():
     print("--- Verifying Bright Data Fetcher Layer ---")
     # This should fail instantly and return FALLBACK because credentials are the default placeholders
-    result = await safe_fetch_pipeline("Notion", "https://notion.so/pricing")
+    result = await safe_fetch_pipeline("Notion", "https://notion.so/pricing", None)
     
     assert result["mode"] == "FALLBACK", f"Expected FALLBACK mode, got {result['mode']}"
     assert result["error"] is not None, "Expected an error message"

@@ -10,6 +10,7 @@ from app.services.persistence.archive import archive_layer
 from app.services.persistence.derivatives import derivative_store
 from app.services.normalizer.canonical_models import CanonicalMarketSnapshot, Metadata, Taxonomy, AcquisitionProvenance, AcquisitionState
 from app.config.versions import EXTRACTOR_VERSION, NORMALIZER_VERSION
+from app.services.scoring.signals import MaterializedSignal
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -59,7 +60,17 @@ async def main():
     signals = diff_pricing(current_snapshot, historical_snapshot)
     logger.info(f"Diff Signals: {json.dumps(signals, indent=2)}")
     
-    impact = evaluate_ontology(signals)
+    materialized_signals = [
+        MaterializedSignal(
+            signal_type=s["type"],
+            severity=s["severity"],
+            confidence=0.9,
+            impact=0.8,
+            originating_snapshot_id=current_snapshot.snapshot_id
+        ) for s in signals
+    ]
+    
+    impact = evaluate_ontology(materialized_signals)
     logger.info(f"Ontology Impact: {json.dumps(impact, indent=2)}")
     
     # 5. Store Derivative

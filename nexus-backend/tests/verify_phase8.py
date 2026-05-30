@@ -1,17 +1,19 @@
 import asyncio
-from httpx import AsyncClient
+from httpx import AsyncClient, ASGITransport
 from app.main import app
 
 async def verify_orchestrator():
     print("--- Verifying Orchestrator Layer ---")
     
-    async with AsyncClient(app=app, base_url="http://test") as ac:
-        response = await ac.post("/api/demo/run", json={
-            "competitor": "Notion",
-            "url": "https://notion.so/pricing",
-            "force_fallback": True, # Ensure it uses our seeded replay data
-            "scenario": "tier_restructure"
-        })
+    transport = ASGITransport(app=app)
+    async with app.router.lifespan_context(app):
+        async with AsyncClient(transport=transport, base_url="http://test") as ac:
+            response = await ac.post("/api/demo/run", json={
+                "competitor": "Notion",
+                "url": "https://notion.so/pricing",
+                "force_fallback": True, # Ensure it uses our seeded replay data
+                "scenario": "tier_restructure"
+            }, headers={"X-Nexus-Tenant": "tenant_demo"})
         
     assert response.status_code == 200, f"Request failed: {response.status_code}"
     data = response.json()

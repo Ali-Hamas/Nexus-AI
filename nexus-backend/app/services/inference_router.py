@@ -4,7 +4,7 @@ import json
 import asyncio
 from typing import Dict, Any, Tuple
 from langchain_openai import ChatOpenAI
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 class InferenceRouter:
     def __init__(self):
